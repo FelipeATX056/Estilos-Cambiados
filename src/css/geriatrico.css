@@ -1,0 +1,548 @@
+.flex {
+    display: flex;
+  }
+
+  .sidebar {
+    background-color: #3b82f6;
+    width: 16rem;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .sidebar .logo {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar .icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar .icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .icon i {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.sidebar .icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid #ffcc00; /* Color de selección */
+    font-weight: bold;
+    width: 11rem;
+}
+
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .search-input {
+    max-width: 250px;      /* Ajusta el ancho del input */
+    padding:15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease-in-out; /* Suaviza la transición de color */
+    margin-bottom: 1rem;
+}
+  .card .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card .header i {
+    color: #6b7280;
+    font-size: 3rem;
+    margin-right: 0.5rem;
+  }
+
+  .card .header span {
+    color: #374151;
+    font-weight: 600;
+  }
+
+  .card .description, .card .comments {
+    color: #6b7280;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .buttons button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .buttons input {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    min-height: 200px;
+  }
+
+  .grid-item-add{  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    padding: 30px 20px;
+    cursor: pointer;
+  }
+
+  .grid-item-geriatrico{
+    position: relative;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-item img {
+    margin-bottom: 0.5rem;
+  }
+
+  .grid-item span {
+    color: #374151;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .grid-item:hover .actions {
+    opacity: 1;  /* Hace que los botones sean visibles al pasar el mouse */
+}
+
+.actions {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;  /* Ocultamos por defecto */
+    transition: opacity 0.3s ease;
+}
+
+.actions .toggle-button, .edit-button, .edit-button-sedes {
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: white;
+    background-color: #374151;
+    margin:0px ;
+
+}
+
+.actions .toggle-button .edit-button-sedes{
+    background: rgba(0, 0, 0, 1);
+}
+
+.edit-button-sedes {
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: white;
+  background-color: #374151;
+  margin:0px ;
+}
+
+.toggle-button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.edit-button:hover , .edit-button-sedes:hover {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+.fas {
+    font-size: 25px;
+}
+
+.status-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -14rem;
+  right: 8rem;
+}
+
+.status-icon .activo {
+  color: green;
+  font-size: 15px;
+}
+
+.status-icon .inactivo {
+  color: red;
+  font-size: 15px;
+}
+
+.color-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.color-box {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.details-button{
+  border-radius: 5px;
+  padding:10px;
+  background-color: rgb(64, 214, 164);
+}
+
+.details-button:hover{
+  background-color: rgb(51, 128, 102);
+}
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Aumentado un poco para mejorar el espaciado */
+}
+
+.modal-geriatrico{
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px; /* Ajusta el ancho máximo */
+  max-height: 80vh; /* No ocupar más del 80% de la altura de la pantalla */
+  overflow-y: auto; /* Habilita el scroll si hay mucho contenido */
+}
+
+
+.geriatrico-logo{
+  padding: 1rem;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 8rem;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column; /* Coloca la etiqueta encima del input */
+  margin: 8px;
+}
+
+.modal-field label {
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px; /* Espaciado más uniforme */
+}
+
+.modal-field input[type="text"],
+.modal-field input[type="email"],
+.modal-field input[type="password"],
+.modal-field input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.modal-field input[type="color"] {
+  width: 100%;
+  height: 40px;
+  margin: 0px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.color-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px; /* Más espacio entre los colores */
+  margin-bottom: 16px;
+}
+
+.color-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.color-input{
+  width: 40px; /* Tamaño más grande para mejor interacción */
+  height: 40px;
+  border-radius: 50%; /* Más cuadrado pero con bordes redondeados */
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 16px; /* Más espacio entre los botones */
+  width: unset;
+}
+
+.modal-buttons, .create, .cancel {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-buttons .create {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-buttons .cancel {
+  background-color: #ff0000;
+  color: white;
+}
+
+.modal-buttons .create:hover{
+  background-color: #034081;
+  color: white;
+}
+
+.modal-buttons .cancel:hover{
+  background-color: #d33724;
+  color: white;
+}
+
+.modal-content-details{
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 84%;
+}
+
+.modal-name{
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #4a5568;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #374151;
+}
+
+.modal-name-sede{
+  font-size: 14px;
+  font-weight:300;
+  margin-bottom: 1px;
+  color: #4a5568;
+}
+
+.rol-buttons{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rol-buttons .create{
+  background-color: #17b801;
+  color: white;
+}
+
+.rol-buttons .create:hover{
+  background-color: #16a000;
+  color: white;
+}
+.rol-buttons .cancel{
+  background-color: #ff0000;
+  color: white;
+}
+
+.rol-buttons .cancel:hover{
+  background-color: #d33724;
+  color: white;
+}
+
+/* Sedes */
+.status-icon-active-sede{
+  padding: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -1rem;
+  right: 7rem;
+  font-size: 18px;
+}
+
+.status-icon-active-sede .activo {
+  color: green;
+}
+
+.status-icon-active-sede .inactivo {
+  color: red;
+}
+
+
+.status-icon-sedes{
+  padding: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -10rem;
+  right: 7rem;
+  font-size: 18px;
+}
+
+.status-icon-sedes .activo {
+  color: green;
+}
+
+.status-icon-sedes .inactivo {
+  color: red;
+}
+
+.status-icon-modal{
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -13.5rem;
+  right: 7.6rem;
+  font-size: 18px;
+}
+
+.status-icon-modal .activo {
+  color: green;
+}
+
+.status-icon-modal .inactivo {
+  color: red;
+}
+
+.icon-edit-user{
+  position: relative;
+  top: -1rem;
+  right: 1rem;
+  font-size: 4rem;
+  color: #007bff;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-name-sedetalles{
+  color: #6b7280;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: baseline;
+}
+
+.modal-image{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  left: 9rem;
+  font-size: 4rem;
+  color: #007bff;
+  display: flex;
+  justify-content: center;
+}
