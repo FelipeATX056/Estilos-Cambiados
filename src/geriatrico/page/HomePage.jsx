@@ -118,10 +118,6 @@ export const HomePage = () => {
                                 acogedor que promueva el bienestar físico, emocional y social de todos nuestros residentes,
                                 mejorando así la calidad de vida de nuestros adultos mayores.
                             </div>
-                            <div className="carousel-buttons">
-                                <button className="button">Leer mas</button>
-                                <button className="button">Leer mas</button>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -188,11 +188,11 @@
     background-color: #df0016;
 }
 .edit-button-asignar {
-    background-color: #fccf08;
+    background-color: #4d4d4d;
 }
 
 .add-button-asignar:hover {
-    background-color: #007bb5;
+    background-color: #007598;
 }
 
 .edit-button-asignar:hover {
@@ -204,7 +204,7 @@
 }
 
 .asignar-button{
-    background-color: #009ee2;
+    background-color: #0090BC;
     color: white;
     border: none;
     width: 100px;
@@ -352,10 +352,6 @@ input[type="checkbox"]{
     font-size: 15px;
     gap: 5px;
     display: flex;  
-}
-
-.form-group-asignar{
-    
 }
 .date-label{
     font-size: 15px;

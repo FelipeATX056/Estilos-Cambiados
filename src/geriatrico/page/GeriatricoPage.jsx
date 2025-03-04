@@ -144,7 +144,7 @@ export const GeriatricosPage = () => {
                 <div className="logo"></div>
                 <div className="icons">
                     <div className="icon" onClick={() => navigate("/geriatrico/superAdmin")}>
-                        <i className="fa-solid fa-building" />
+                        <i className="fa-solid fa-home" />
                         <span className="icon-text">Inicio Admin</span>
                     </div>
                     <div className="icon" onClick={() => navigate("/geriatrico/roles")}>
@@ -166,18 +166,29 @@ export const GeriatricosPage = () => {
                 </div>
             </div>
             <div className="main-content">
-                <input
-                    type="text"
-                    placeholder="Buscar por nombre o NIT..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="search-input"
-                />
+            <div className="search-container">
+
+            <input
+                type="text"
+                placeholder="Buscar por nombre o NIT..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </div>
                 <div className="grid">
                     {filteredGeriatricos.length > 0 ? (
                         filteredGeriatricos.map((geriatrico) => (
                             <div key={geriatrico.ge_nit} >
                                 <div className="grid-item">
+                                <img
+                                        src={geriatrico.ge_logo || "/public/Admin.jpg"}
+                                        alt="Logo"
+                                        width="100"
+                                        height="100"
+                                        onError={(e) => { e.target.src = "/public/Admin.jpg"; }}
+                                    />
                                     <span className="geriatrico-name">{geriatrico.ge_nombre}</span>
                                     <p className="geriatrico-nit">NIT: {geriatrico.ge_nit}</p>
                                     <div className="color-boxes">
@@ -185,13 +196,7 @@ export const GeriatricosPage = () => {
                                         <span className="color-box" style={{ backgroundColor: geriatrico.ge_color_secundario }}></span>
                                         <span className="color-box" style={{ backgroundColor: geriatrico.ge_color_terciario }}></span>
                                     </div>
-                                    <img
-                                        src={geriatrico.ge_logo || "/public/Admin.jpg"}
-                                        alt="Logo"
-                                        width="100"
-                                        height="100"
-                                        onError={(e) => { e.target.src = "/public/Admin.jpg"; }}
-                                    />
+                                    
                                     <div className="status-icon">
                                         {geriatrico.ge_activo ? (
                                             <i className="fa-solid fa-circle-check activo"></i>

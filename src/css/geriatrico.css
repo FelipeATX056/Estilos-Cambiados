@@ -3,13 +3,14 @@
   }
 
   .sidebar {
-    background-color: #3b82f6;
+    background-color: #d9d9d9;
     width: 16rem;
     height: 120vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+   
   }
   
   .sidebar .logo {
@@ -23,38 +24,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    color: #3d3d3d;
 }
+
+
 
 .sidebar .icon {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: .3s;
+    font-weight: 400;
+    height: 30px;
+    
+    
 }
 
 .sidebar .icon:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #b9b9b9;
+    transform: translateY(-2px);
 }
 
 .sidebar .icon i {
-    color: black;
+    color: #3d3d3d;
     font-size: 1.3rem;
 }
 
 .sidebar .icon {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-left: 5px solid #ffcc00; /* Color de selección */
-    font-weight: bold;
-    width: 11rem;
+    background-color: #d9d9d9;
+    border-left: 5px solid #3d3d3d00; /* Color de selección */
+    font-weight: 600;
+    width: 14rem;
 }
 
   .main-content {
     flex: 1;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .card {
@@ -66,17 +75,51 @@
     width: 100%;
   }
 
-  .search-input {
-    max-width: 250px;      /* Ajusta el ancho del input */
-    padding:15px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+  .search-container {
     position: relative;
-    transition: all 0.3s ease-in-out; /* Suaviza la transición de color */
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    max-width: 1320px; /* Mantiene el mismo ancho que el input */
+    width: 100%;
 }
+
+.search-container i {
+    position: relative;
+    top: -12px;
+    left: -45px; /* Ajusta la posición del icono */
+    color: #888; /* Color del icono */
+    font-size: 25px;
+}
+
+.search-input {
+    padding: 20px;
+    padding-left: 25px; /* Ajusta para dejar espacio al icono */
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+/* Cambios al enfocar el input */
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Cambia el placeholder cuando está enfocado */
+.search-input:focus::placeholder {
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Cambia el color del icono cuando el input está enfocado */
+.search-container:has(.search-input:focus) i {
+  color: #007bff;
+}
+
   .card .header {
     display: flex;
     align-items: center;
@@ -153,17 +196,22 @@
   .grid-item {
     position: relative;
     overflow: hidden;
-    background-color: white;
+    background-color: rgb(238, 238, 238);
     padding: 10px;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow:
+    inset 0 -3em 3em rgba(255, 255, 255, 0.828),
+    0 0 0 2px rgba(255, 255, 255, 0),
+    0.3em 0.3em 1em rgba(37, 37, 37, 0.242);
+    transition: .3s;
   }
 
   .grid-item img {
-    margin-bottom: 0.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .grid-item span {
@@ -171,6 +219,14 @@
     font-weight: 600;
     text-align: center;
   }
+  .grid-item:hover {
+    opacity: 1;  /* Hace que los botones sean visibles al pasar el mouse */
+    transform: translateY(-10px);
+    box-shadow:
+    inset 0 -3em 3em rgba(127, 154, 178, 0.169),
+    0 0 0 2px rgba(255, 255, 255, 0),
+    0.3em 0.3em 1em rgba(37, 37, 37, 0.137);
+}
 
   .grid-item:hover .actions {
     opacity: 1;  /* Hace que los botones sean visibles al pasar el mouse */
@@ -198,6 +254,10 @@
 
 }
 
+  img{
+  border-radius: 10px;
+  }
+
 .actions .toggle-button .edit-button-sedes{
     background: rgba(0, 0, 0, 1);
 }
@@ -214,17 +274,31 @@
 }
 
 .toggle-button:hover {
-    background-color: #ffcc00;
+    background-color: #0090BC;
     transform: scale(1.1);
 }
 
 .edit-button:hover , .edit-button-sedes:hover {
-    background-color: #007bff;
+    background-color: #0090bc;
     transform: scale(1.1);
 }
 
 .fas {
     font-size: 25px;
+}
+.grid-item-geriatrico i {
+  font-size: 30px;
+  margin-top: 40px; 
+  color: #0090BC;
+  margin-right: 10px;
+}
+
+
+.grid-item-geriatrico p {
+  font-size: 20px;
+  color: #0090BC;
+  font-weight: 600;
+  margin-top: 60px; 
 }
 
 .status-icon {
@@ -234,15 +308,13 @@
   top: -14rem;
   right: 8rem;
 }
-
 .status-icon .activo {
-  color: green;
-  font-size: 15px;
+  color: #0090BC;
+  font-size: 20px;
 }
-
 .status-icon .inactivo {
-  color: red;
-  font-size: 15px;
+  color: rgb(114, 114, 114);
+  font-size: 20px;
 }
 
 .color-boxes {
@@ -256,17 +328,18 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 2px solid #717171;
 }
 
 .details-button{
   border-radius: 5px;
   padding:10px;
-  background-color: rgb(64, 214, 164);
+  background-color: #0090BC;
+  
 }
 
 .details-button:hover{
-  background-color: rgb(51, 128, 102);
+  background-color: #006f91;
 }
 /* Modal */
 .modal-overlay {
@@ -394,7 +467,7 @@
 }
 
 .modal-buttons .cancel {
-  background-color: #ff0000;
+  background-color: #505050;
   color: white;
 }
 
@@ -404,7 +477,7 @@
 }
 
 .modal-buttons .cancel:hover{
-  background-color: #d33724;
+  background-color: #636363;
   color: white;
 }
 
@@ -441,21 +514,21 @@
 }
 
 .rol-buttons .create{
-  background-color: #17b801;
+  background-color: #0090BC;
   color: white;
 }
 
 .rol-buttons .create:hover{
-  background-color: #16a000;
+  background-color: #006f91;
   color: white;
 }
 .rol-buttons .cancel{
-  background-color: #ff0000;
+  background-color: #4d4d4d;
   color: white;
 }
 
 .rol-buttons .cancel:hover{
-  background-color: #d33724;
+  background-color: #5c5c5c;
   color: white;
 }
 
@@ -471,7 +544,7 @@
 }
 
 .status-icon-active-sede .activo {
-  color: green;
+  color: #0090BC;
 }
 
 .status-icon-active-sede .inactivo {
@@ -546,3 +619,61 @@
   display: flex;
   justify-content: center;
 }
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .flex {
+      flex-direction: column; /* Apilar sidebar y contenido principal verticalmente */
+  }
+
+  .sidebar {
+      width: 100%; /* El sidebar ocupa todo el ancho */
+      height: auto; /* Ajustar la altura al contenido */
+      position: static; /* Remover el posicionamiento fijo */
+      overflow-y: visible; /* Deshabilitar el scroll vertical */
+      padding: 0.5rem;
+  }
+
+  .sidebar .icons {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+      gap: 0;
+  }
+
+  .sidebar .icon {
+      width: auto;
+      font-size: 0.8rem;
+      padding: 5px;
+      gap: 0.2rem;
+  }
+
+  .sidebar .icon i {
+      font-size: 1rem;
+  }
+
+  .main-content {
+      padding: 1rem; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  .grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajustar los items del grid en pantallas pequeñas */
+  }
+
+  .search-container i {
+      left: 10px; /* Ajustar la posición del icono */
+  }
+
+  .search-input {
+      padding-left: 40px; /* Ajustar el padding para el input de búsqueda */
+  }
+
+  .grid-item-geriatrico {
+      font-size: 14px;
+      padding: 20px 10px;
+  }
+}
+
+
