@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import '../../css/geriatrico.css';
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../hooks";
+import 'animate.css';
 
 export const GeriatricosPage = () => {
     const navigate = useNavigate();
@@ -140,6 +141,7 @@ export const GeriatricosPage = () => {
 
     return (
         <div className="flex">
+            <div className="animate__animated animate__fadeInLeft">
             <div className="sidebar">
                 <div className="logo"></div>
                 <div className="icons">
@@ -163,11 +165,15 @@ export const GeriatricosPage = () => {
                         <i className="fa-solid fa-right-from-bracket" />
                         <span className="icon-text">Salir</span>
                     </div>
+
                 </div>
             </div>
-            <div className="main-content">
-            <div className="search-container">
 
+            </div>
+            
+            <div className="main-content">
+                <div className="animate__animated animate__fadeInDown">
+            <div className="search-container">
             <input
                 type="text"
                 placeholder="Buscar por nombre o NIT..."
@@ -176,8 +182,13 @@ export const GeriatricosPage = () => {
                 className="search-input"
             />
             <i className="fa-solid fa-magnifying-glass"></i>
+
           </div>
+          </div>
+          
+          
                 <div className="grid">
+                    
                     {filteredGeriatricos.length > 0 ? (
                         filteredGeriatricos.map((geriatrico) => (
                             <div key={geriatrico.ge_nit} >
@@ -235,8 +246,14 @@ export const GeriatricosPage = () => {
                             <p>Crear Geriatrico</p>
                         </div>
                     </div>
-                </div>
+                    
+                    
+               
+                
             </div>
+            </div>
+          
+
             <ModalGeriatrico
                 geriatrico={selectedGeriatrico}
                 isOpen={isModalOpen}

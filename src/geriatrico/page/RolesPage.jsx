@@ -47,8 +47,10 @@ export const RolesPage = () => {
   };
 
   return (
+
     <div className="container-rol">
       <GoBackButton />
+      <div className="animate__animated animate__fadeInDown">
       <div className="content-rol">
         {error && <p className="error-message">{error}</p>}
         <div className="grid-rol">
@@ -81,6 +83,9 @@ export const RolesPage = () => {
             </div>
           </div>
         </div>
+        
+        
+      </div>
       </div>
 
       {/* Modal para crear un nuevo rol */}
@@ -97,6 +102,8 @@ export const RolesPage = () => {
         rol={selectedRol}
         onUpdate={handleUpdateRol}
       />
+      
     </div>
+    
   );
 };
