@@ -45,7 +45,7 @@
 }
 
 .sidebar .icon:hover {
-    background-color: #b9b9b9;
+    background-color: #00000023;
     transform: translateY(-2px);
 }
 
@@ -55,7 +55,7 @@
 }
 
 .sidebar .icon {
-    background-color: #d9d9d9;
+    background-color: #d9d9d900;
     border-left: 5px solid #3d3d3d00; /* Color de selección */
     font-weight: 600;
     width: 14rem;

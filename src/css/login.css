@@ -21,17 +21,19 @@
 /* Estilo del contenedor principal */
 .cuadrado {
   background: linear-gradient(var(--light-color), #D9D9D9);
-  width: 40vw;
-  height: 92vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+width: 40vw;
+height: 92vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2rem;
+position: relative;
 }
 
 /* Círculos decorativos */
 .circlebottom,
 .circletop {
+  z-index: 1;
   background: var(--gradient-primary);
   border-radius: 50%;
   position: absolute;
@@ -45,9 +47,8 @@
 .circlebottom {
   width: 28rem;
   height: 28rem;
-  bottom: -10rem;
-  left: -14.5rem;
-  z-index: 2;
+  bottom: -12rem;
+  left: -12rem;
 }
 
 .circletop {
@@ -100,8 +101,6 @@ h2 {
   gap: 5px;
   padding: 10px;
   margin-top: 110px;
-
-  
 }
 
 h3 {
@@ -109,7 +108,6 @@ h3 {
   font-size: 1.8rem;
   color: #919191;
   margin-bottom: 20px; /* Ajusta este valor para mayor separación */
-
 }
 
 h2 {
@@ -117,7 +115,6 @@ h2 {
   font-size: 3.2rem;
   color: var(--text-dark);
   top: 90px; /* Ajusta para que se mantenga debajo de h3 */
-  
 }
 
 /* Enlaces y párrafos */
@@ -150,9 +147,10 @@ h2 {
   width: 300px;
   margin: 0 auto;
   padding: 10px;
-  top: 190px;
+  top: 170px;
   left: 60px;
   margin-top: 120px;
+  z-index: 2; /* Asegurar que el formulario esté en medio */
 }
 
 /* Contenedor de los campos de entrada */
@@ -185,7 +183,7 @@ h2 {
 /* Botón de envío */
 button {
   width: 90%;
-  padding: 10px;
+  padding: 8px 10px;
   background-color: var(--primary-color);
   color: #fff;
   border: none;
@@ -197,16 +195,21 @@ button {
   cursor: pointer;
   margin: 20px 40px;
   transition: background-color 0.3s ease;
+  z-index: 3; /* Asegurar que el botón esté al frente */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0090bc;
 }
 
 /* Responsividad para dispositivos medianos */
 @media (max-width: 768px) {
   .cuadrado {
     width: 80vw;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .circlebottom,
@@ -220,59 +223,68 @@ button:hover {
     font-size: 1.125rem;
   }
 
-  h3, h2 {
+  h3,
+  h2 {
     font-size: 2.1rem;
   }
 
   .form {
     width: 80%;
-    top: 420px;
+    top: 190px;
     left: 10px;
   }
 
   button {
     width: 80%;
   }
-  .img{
+
+  .img {
     visibility: hidden;
-    }
-}
-  
-  /* Ajustes para dispositivos pequeños (teléfonos móviles) */
-  @media (max-width: 400px) {
-    .cuadrado {
-      width: 90vw;
-    }
-  
-    .circlebottom,
-    .circletop {
-      width: 15rem;
-      height: 15rem;
-    }
-  
-    .web {
-      font-size: 16px;
-    }
-  
-    h3, h2, p {
-      font-size: 26px;
-    }
-  
-    .form {
-      width: 90%;
-      top: 350px;
-      left: 5%;
-    }
-  
-    button {
-      width: 90%;
-    }
-    
   }
 
-  
-  
+  .p {
+    transform: translateX(0); /* Eliminar el desplazamiento */
+    justify-content: center; /* Centrar el texto */
+  }
+}
 
+/* Ajustes para dispositivos pequeños (teléfonos móviles) */
+@media (max-width: 400px) {
+  .cuadrado {
+    width: 70vw;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .circlebottom,
+  .circletop {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .web {
+    font-size: 16px;
+  }
+
+  h3,
+  h2,
+  p {
+    font-size: 26px;
+  }
+
+  .form {
+    width: 90%;
+    top: 160px;
+    left: 5%;
+  }
+
+  button {
+    width: 90%;
+  }
   
-  
+  .p {
+    transform: translateX(0); /* Eliminar el desplazamiento */
+    justify-content: center; /* Centrar el texto */
+  }
+}

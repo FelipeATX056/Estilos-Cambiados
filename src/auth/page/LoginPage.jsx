@@ -109,6 +109,7 @@ export const LoginPage = () => {
 
 
   return (
+    <div className="animate__animated animate__fadeIn">
     <div className="BodyLogin">
       <img src="/Enfermera.png" className="img" alt="enfermera"/>
       <div className="circletop"></div>
@@ -150,6 +151,7 @@ export const LoginPage = () => {
         </form>
         <div className="circlebottom"></div>
       </div>
+    </div>
     </div>
   );
 };
